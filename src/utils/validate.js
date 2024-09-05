@@ -11,10 +11,12 @@ export const checkValidSignInFrom = (email, password) => {
   if (!isPasswordValid) return "Error: Incorrect password. Please try again.";
   return null;
 };
-export const checkValidSignUpFrom = (email, password) => {
+export const checkValidSignUpFrom = (name, email, password) => {
+  const isNameValid = /\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+/.test(name);
   const isEmailValid = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(
     email
   );
+  if (!isNameValid) return "Please enter a valid Name";
   if (!isEmailValid) return "Please enter a valid Email";
   if (password.length < 8)
     return "Password must be at least 8 characters long.";
