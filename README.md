@@ -2,7 +2,11 @@
 
 - Create react App
 - Configured tailwind css in the app
--
+- Header
+- Routing of App
+- Login Form
+- Sign Up Form
+- Form Validation
 
 # Features
 
@@ -15,7 +19,7 @@
   - Trailer in background
   - Title and description
   - movie suggestions
-    - movielists \*N
+    - Movielists
 - Netflix Gpt
   - Search bar
   - Movie Suggestions
