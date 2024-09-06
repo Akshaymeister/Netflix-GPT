@@ -7,9 +7,7 @@ const DropDownMenu = () => {
   const navigate = useNavigate();
   const handleSignout = () => {
     signOut(auth)
-      .then(() => {
-        navigate("/");
-      })
+      .then(() => {})
       .catch((error) => {
         navigate("/error");
       });

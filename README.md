@@ -17,6 +17,10 @@
 - Implemented Drop Down Menu for Header
 - update profile call
 - Fetch Movies from TMDB
+- UnSubscribed to the OnAuthChanged Callback
+- Add Hardcoded values to constant files
+- Registered for TMDB API and create and app and get access token
+- Get Data from TMDB Now playing Movies List
 
 # Features
 

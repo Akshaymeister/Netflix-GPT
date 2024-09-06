@@ -7,16 +7,15 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { BG_IMG } from "../utils/constants/constants";
 
 const Login = () => {
   const [isSignIn, setIsSignIn] = useState(true);
   const [errorMessage, seterrorMessage] = useState(null);
   const dispatch = useDispatch();
 
-  const navigate = useNavigate();
   const email = useRef(null);
   const password = useRef(null);
   const name = useRef(null);
@@ -47,23 +46,16 @@ const Login = () => {
           const user = userCredential.user;
           updateProfile(user, {
             displayName: name.current.value,
-            photoURL: "https://avatars.githubusercontent.com/u/38403840?v=4",
-          })
-            .then(() => {
-              const { uid, email, displayName, photoURL } = auth.currentUser;
-              dispatch(
-                addUser({
-                  uid: uid,
-                  email: email,
-                  displayName: displayName,
-                  photoURL: photoURL,
-                })
-              );
-              navigate("/browse");
-            })
-            .catch((error) => {
-              seterrorMessage("Enter a Valid Name");
-            });
+          }).then(() => {
+            const { uid, email, displayName } = auth.currentUser;
+            dispatch(
+              addUser({
+                uid: uid,
+                email: email,
+                displayName: displayName,
+              })
+            );
+          });
         })
         .catch((error) => {
           seterrorMessage("User Already Exists!!");
@@ -74,9 +66,7 @@ const Login = () => {
         email.current.value,
         password.current.value
       )
-        .then((userCredential) => {
-          navigate("/browse");
-        })
+        .then((userCredential) => {})
         .catch((error) => {
           seterrorMessage("Invalid Credentials!");
         });
@@ -89,7 +79,7 @@ const Login = () => {
       <div>
         <img
           className="absolute blur-[3px] "
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/0e916f82-036f-468a-a098-52592391d3a8/null/IN-en-20240902-POP_SIGNUP_TWO_WEEKS-perspective_a8d5d4ae-15d5-4414-b272-b12d2fce75cd_large.jpg"
+          src={BG_IMG}
           alt="background-image with movie posters"
         />
       </div>
