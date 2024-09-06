@@ -13,7 +13,7 @@ const DropDownMenu = () => {
       });
   };
   return (
-    <div className="dropdown flex flex-col justify-center items-center absolute top-[5.5rem] right-12 w-28 p-4  rounded-md bg-gray-900 text-white border border-gray-600">
+    <div className="dropdown flex flex-col justify-center items-center absolute top-[5.5rem] right-[5.8rem] w-28 p-4  rounded-md bg-gray-900 text-white border border-gray-600">
       <ul className="flex flex-col gap-4 text-sm ">
         <li className="cursor-pointer">Profile</li>
         <li className="cursor-pointer">Settings</li>
