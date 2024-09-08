@@ -6,6 +6,8 @@ import { addUser, removeUser } from "../utils/userSlice";
 import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
 import { LOGO, USER_AVATAR } from "../utils/constants/constants";
+import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
+import { toggleGptSearchView } from "../utils/gptSlice";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -33,11 +35,19 @@ const Header = () => {
     return () => unsubscribe();
   }, []);
 
+  const handleGptSearch = () => {
+    dispatch(toggleGptSearchView());
+  };
+
   return (
     <div className="flex justify-between w-full absolute px-20 py-2 bg-gradient-to-b from-black z-10 ">
       <img className="w-44 " src={LOGO} alt="netflix-logo" />
       {user && (
-        <div className="flex p-4 gap-4">
+        <div className="flex p-4 gap-6 justify-center items-center">
+          <MagnifyingGlassIcon
+            onClick={handleGptSearch}
+            className="w-10 fill-white cursor-pointer"
+          />
           <img
             onClick={() => {
               setOpenMenu(!openMenu);

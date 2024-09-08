@@ -29,6 +29,14 @@
 - Update store with trailer video data
 - embedded the youtube video and make it autoplay
 - Build Secondary Component
+- build movie list
+- build movie card
+- tmbd image cdn url
+- made the browse page amazing using tailwind
+- customhooks for movies
+- gpt search page
+- gpt search bar
+- multilanguage feature
 
 # Features
 

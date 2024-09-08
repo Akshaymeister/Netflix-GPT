@@ -78,7 +78,7 @@ const Login = () => {
       <Header />
       <div>
         <img
-          className="absolute blur-[3px] "
+          className="absolute w-full blur-[3px] "
           src={BG_IMG}
           alt="background-image with movie posters"
         />
